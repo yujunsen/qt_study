@@ -34,7 +34,11 @@ HEADERS += \
 FORMS += \
         mydialog.ui
 
+RC_ICONS = g2.ico
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
