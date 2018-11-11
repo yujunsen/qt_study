@@ -3,6 +3,7 @@
 #include <QFileDialog>
 #include <QDebug>
 
+
 //RC_ICONS = g2.ico
 //配置文件 更改图标
 

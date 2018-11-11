@@ -3,9 +3,9 @@
 
 #include <QDialog>
 
-//namespace Ui {
-//class MyDialog;
-//}
+namespace Ui {
+class MyDialog;
+}
 
 class MyDialog : public QDialog
 {
@@ -16,7 +16,7 @@ public:
     ~MyDialog();
 
 private:
-//    Ui::MyDialog *ui;
+    Ui::MyDialog *ui;
     QString _strDir;
 };
 
