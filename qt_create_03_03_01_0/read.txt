@@ -1,0 +1,27 @@
+QFrame类是带有边框的部件的基类。它的子类包括最常用的标签部件QLabel，
+	另外还有QLCDNumber、QSplitter、QStackedWidget、QToolBox和QAbstractScrol-1Area类。Q
+	AbstractScrollArea类是所有带有滚动区域的部件类的抽象基类，
+	这里需要说明，Qt中凡是带有Abstract字样的类都是抽象基类。
+	抽象基类是不能直接使用的，但是可以继承该类实现自己的类，或者使用它提供的子类。Q
+	AbstractScrollArea的子类中有最常用的文本编辑器类QTextEdit类和各种项目视图类，
+带边框部件最主要的特点就是可以有一个明显的边界框架。
+	QFrame类的主要功能就是用来实现不同的边框效果，这主要是由边框形状（Shape）和边框阴影（Shadow）
+	组合来形成的。QFrame类中定义的主要边框形状如表3-1所列，边框阴影如表3-2所列。
+	这里要说明两个名词：lineWidth和midLineWidth，其中，lineWidth是边框边界线的宽度；
+		而midLineWidth是在边框中额外插入的一条线的宽度，这条线的作用是为了形成3D效果，
+		并且只在Box、Hline和VLine表现为凸起或者凹陷时有用。
+		QFrame的这些元素组合成的所有边框效果如图3-12所示。
+	QFrame类边框形状的取值
+	常量							描述
+	QFrame:：NoFrame 				QFrame不进行绘制
+	QFrame:：Box|QFrame				在它的内容四周绘制一个边框
+	QFrame:：PanelQFrame			绘制一个面板，使得内容表现为凸起或者凹陷
+	QFrame:：StyledPanel			绘制一个矩形面板，它的效果依赖于当前的GUI样式，可以凸起或凹陷
+	QFrame:：HLine QFrame			绘制一条水平线，没有任何框架（可以作为分离器）
+	QFrame:：VLine|QFrame			绘制一条垂直线，没有任何框架（可以作为分离器）
+	QFrame:：WinPanel				绘制一个类似于Windows2000中的矩形面板，可以凸起或者凹陷
+	QFrame类边框阴影的取值
+	常量							描述
+	QFrame:：Plain 					边框和内容没有3D效果，与四周界面在同一水平面上
+	QFrame:：Raised 				边框和内容表现为凸起，具有3D效果Q
+	Frame:：Sunken 					边框和内容表现为凹陷，具有3D效果
