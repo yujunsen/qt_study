@@ -22,7 +22,7 @@ Widget::Widget(QWidget *parent) :
 
     //4 自动补全
     /*
-     * QLineEdit中也提供了强大的自动补全功能，这是利用QCompleter类实现的。
+     * QLineEdit中也提供了强大的自动补全功能，这是利用QCompleter类实现的。3_
     */
     QStringList wordlist;
     wordlist <<"Qt" <<"Qt Creater" << tr("你好");
