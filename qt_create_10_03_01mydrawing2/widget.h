@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::Widget *ui;
+protected:
+    void paintEvent(QPaintEvent *event);
 };
 
 #endif // WIDGET_H
