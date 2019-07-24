@@ -19,15 +19,27 @@ int main(int argc, char *argv[])
         item->setPos(i * 50 - 90, -50);
         scene.addItem(item);
     }
-    QTimer timer;
-    QObject::connect(&timer, &QTimer::timeout, &scene, &QGraphicsScene::advance);
-    timer.start(300);
+
 
     MyView view;
     view.setScene(&scene);
     view.setBackgroundBrush(QPixmap("://background.png"));
     view.show();
 
+    QTimer timer;
+    QObject::connect(&timer, &QTimer::timeout, &scene, &QGraphicsScene::advance);
+    timer.start(300);
+
+    MyItem *item1 = new MyItem;
+    item1->setColor(Qt::blue);
+    MyItem *item2 = new MyItem;
+    item2->setColor(Qt::green);
+    QGraphicsItemGroup *group = new QGraphicsItemGroup;
+    group->addToGroup(item1);
+    group->addToGroup(item2);
+    group->setFlag(QGraphicsItem::ItemIsMovable);
+    group->setPos(30, 0);
+    scene.addItem(group);
 
     return a.exec();
 }

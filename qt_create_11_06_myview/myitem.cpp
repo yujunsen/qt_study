@@ -27,7 +27,7 @@ QRectF MyItem::boundingRect() const
 
 void MyItem::paint(QPainter *painter, const QStyleOptionGraphicsItem */*option*/, QWidget */*widget*/)
 {
-    if(hasFocus())
+    if(hasFocus() ||!collidingItems().isEmpty())
         painter->setPen(QPen(QColor(255,255,255,200)));
     else
         painter->setPen(QPen(QColor(100, 100, 100, 100)));
@@ -66,6 +66,13 @@ void MyItem::advance(int phase)
         setRotation(-30);
         moveBy(qrand()%10, -qrand()%10);
      }
+}
+
+QPainterPath MyItem::shape()
+{
+    QPainterPath path;
+    path.addRect(-10, -10, 20, 20);
+    return path;
 }
 
 // 键盘按下事件处理函数，判断是否是向下方向键，如果是，则向下移动图形项

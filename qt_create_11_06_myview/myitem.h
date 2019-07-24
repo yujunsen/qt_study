@@ -15,6 +15,7 @@ public:
 
     void setColor(const QColor &color);
     void advance(int phase);
+    QPainterPath shape();
 private:
     QColor brushColor;
 protected:
